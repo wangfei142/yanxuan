@@ -8,12 +8,12 @@ mysql_query('use dayone');
 
 $account = $_POST['account'];
 
-$pwd = $_POST['pwd'];
+$password = $_POST['pwd'];
 
 $phone = $_POST['phone'];
 
 //修改库里的数据
-$sql="insert into register(account,pwd,phone) values ('$account','$pwd','$phone')";
+$sql="insert into register (account,password,phone) values ('$account','$password','$phone')";
 // mysql_query() 函数执行一条 MySQL 查询。
 mysql_query($sql);
 //增删改获取受影响的行数
@@ -27,7 +27,7 @@ if( $num > 0 ){
     ];  
 }else{
     //自定义数据返回
-    $rse=[  
+    $res=[  
         'dig'=>-1,
         'meassage'=>'网络异常'
     ];

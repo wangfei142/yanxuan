@@ -173,7 +173,7 @@ $('.zc_zc').on('click', function () {
             function (data) {
                 console.log(data);
                 if (data.dig == 200) {
-                    $(".phone ").next().html('✓' + data.meassage).css('color', 'red');
+                    // $(".phone ").next().html('✓' + data.meassage).css('color', 'red');
                     // $('.account').val('')//邮箱
                     // $('.pwd').val('')//密码
                     // $('.phone').val('')//手机
@@ -182,14 +182,16 @@ $('.zc_zc').on('click', function () {
                     layer.confirm('您是已经注册成功！是否跳转？', {
                         btn: ['是', '否'] //按钮
                     }, function () {
-                        layer.msg('首页设置接入', { icon: 1 });
+                        location.href = "../loginsystem/index.html "
                     }, function () {
-                        layer.msg('本地网址', { icon: 1 });
+                        location.href = "./index.html "
                     });
                 } else {
                     $(".phone ").next().html('✓' + data.meassage).css('color', 'green');
                 }
+
             }, "json");
-    }
+    };
+    $('.account').val("");
 });
 

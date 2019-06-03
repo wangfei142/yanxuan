@@ -9,12 +9,15 @@ mysql_query('use dayone');
 // account: 123123
 // password: 123123
 
-$account=$_POST['accounr_login'];
+$phone=$_POST['phone'];
 $password=$_POST['pwd_login'];
 //验证账号与密码是否正确
-$sql="select * from register where ( account='$account') and ( password='$password')";
+$sql="select * from register where ( phone ='$phone') and ( password='$password')";
+
 $result=mysql_query($sql);
+
 $rows=mysql_fetch_assoc($result);
+
 if($rows){
     $rows=[
         'dig'=>200,
