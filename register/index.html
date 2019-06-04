@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="./css/basic.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./layer/layer.js"></script>
+
+</head>
+<style>
+    .id {
+        margin: auto;
+        background-color: #efefef;
+        width: 100%;
+        height: auto;
+
+
+
+    }
+
+    .title_head {
+        height: 130px;
+        width: 962px;
+        margin: auto;
+    }
+
+    .reg_block {
+        width: 962px;
+        height: 908px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        box-shadow: 0px 1px 5px #999;
+        margin: auto;
+    }
+
+    .reg_footer {
+        height: 47px;
+        width: 962px;
+        margin: auto;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .reg_footer>ul>li {
+        color: #b1b1b1;
+        display: inline-block;
+        /* float: left; */
+    }
+
+    .reg_footer>ul>li:hover a {
+        color: #ee8c18;
+    }
+
+    .reg_footer a,
+    .reg_footer p {
+        color: #b1b1b1;
+        font-family: "Microsoft YaHei", "微软雅黑", "宋体", helvetica, "Hiragino Sans GB";
+    }
+
+    .title_logo {
+        float: left;
+        width: 300px;
+        height: 60px;
+        background-position: -50px -18px;
+        margin-top: 35px;
+        background: url("./img/sprite.png") no-repeat;
+    }
+
+    .ti_d {
+        float: right;
+        font-size: 18px;
+        margin-top: 50px;
+    }
+
+    .zc_input {
+        float: left;
+        height: 44px;
+        width: 280px;
+        padding-right: 40px;
+        margin-top: 12px;
+        border: solid 1px #ddd;
+        font-size: 16px;
+        text-indent: 0.5em;
+        /* font-weight: bold; */
+        line-height: 30px;
+        padding-left: 0;
+        color: #333;
+    }
+
+    .zc_title {
+        float: left;
+        width: 311px;
+        text-align: right;
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 45px;
+        color: #333;
+        padding-right: 10px;
+    }
+
+    .zc_li {
+        position: relative;
+        float: left;
+        height: 72px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .zc_title_t {
+        width: 320px;
+        margin: 0 auto;
+        padding-top: 44px;
+        padding-bottom: 24px;
+        height: 40px;
+    }
+
+    .zc_p {
+        float: left;
+        background: #ca5252;
+        border-color: #ca5252;
+        color: #fff;
+    }
+
+    .zc_j {
+        float: right;
+        width: 160px !important;
+    }
+
+    .zc_p,
+    .zc_j {
+        display: block;
+        width: 158px;
+        border: solid 1px #ccc;
+        border-left: 0;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        font-size: 16px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .zc_btn {
+        padding-right: 0 !important;
+        width: 323px !important;
+        outline: none;
+    }
+
+    .zc_zc {
+        float: left;
+        border: 0;
+        width: 322px;
+        height: 46px;
+        margin-top: 12px;
+        background-color: #ca5252;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+        line-height: 46px;
+        cursor: pointer;
+
+    }
+
+    .zc_app>img {
+        padding-top: 60px;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .title_tishi {
+        position: relative;
+    }
+
+    .tishi_span {
+        position: absolute;
+        padding-left: 18px;
+        top: 28px;
+    }
+</style>
+
+<body>
+    <div class="id">
+        <div class="title_head">
+            <a href="#">
+                <div class="title_logo"></div>
+            </a>
+            <div class="ti_d">
+                已有帐号？去
+                <a href="#" style="color:#ca5252;">登录</a>
+            </div>
+
+        </div>
+        <div class="reg_block">
+            <form action="" class="zcform" onsubmit="return false">
+                <div class="zc_title_t">
+                    <div class="zc_p">
+                        普通帐号注册
+                    </div>
+                    <div class="zc_j">
+                        靓号注册
+                    </div>
+                </div>
+                <ul>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">账户:</span>
+                        <input type="text" name="" class="account zc_input" placeholder="网易邮箱/其他邮箱">
+                        <span class="tishi_span"></span>
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">密码:</span>
+                        <input type="text" name="" class="pwd zc_input" placeholder="6-16位密码，区分大小写">
+                        <span class="tishi_span"></span>
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">确认密码:</span>
+                        <input type="text" class="zc_input repwd" placeholder="再次输入密码">
+                        <span class="tishi_span"></span>
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">手机号:</span>
+                        <input type="text" class="zc_input phone" placeholder="11位手机号">
+                        <span class="tishi_span"></span>
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">随机验证码:</span>
+                        <input type="button" class="zc_input  zc_btn" placeholder="点击获取验证码" value="点击获取验证码">
+
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title">验证码:</span>
+                        <input type="text" class="zc_input auth " placeholder="输入验证码">
+                        <span class="tishi_span"></span>
+                    </li>
+                    <li class="zc_li title_tishi">
+                        <span class="zc_title"></span>
+                        <div class="zc_zc">注册</div>
+
+                    </li>
+                </ul>
+
+                <div class="zc_app">
+                    <img src="./img/app_xc_small_170402.png" alt="">
+                </div>
+            </form>
+        </div>
+        <div class="reg_footer">
+            <ul>
+                <li>
+                    <a href="">About NetEase</a>
+                </li>
+                <li>-
+                    <a href="">公司简介</a>
+                </li>
+                <li>-
+                    <a href="">联系方式</a>
+                </li>
+                <li>-
+                    <a href="">OAuth2.0认证</a>
+                </li>
+                <li>-
+                    <a href="">客户服务</a>
+                </li>
+                <li>-
+                    <a href="">相关法律</a>
+                </li>
+                <li>-
+                    <a href="">网络营销</a>
+                </li>
+            </ul>
+            <br>
+            <p>网易公司版权所有 ©1997-2019
+            </p>
+        </div>
+    </div>
+
+</body>
+<script src="./js/login.js"></script>
+
+</html>

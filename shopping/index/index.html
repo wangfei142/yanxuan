@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车商品列表</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1213570_k6nz1n47wur.css">
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+
+<style>
+    .container {
+        width: 1090px;
+        margin: auto;
+    }
+
+    .product-box {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        height: 140px;
+        width: 1090px;
+    }
+
+    .PerItem {
+        width: 1090px;
+        height: 100px;
+        padding: 20px;
+    }
+
+    .inpUt {
+        position: relative;
+        height: 18px;
+        width: 18px;
+        display: inline-block;
+        top: -38px;
+
+    }
+
+    .cart-item {
+        float: left;
+        /* text-align: center; */
+        position: relative;
+        color: #999;
+    }
+
+    .hnkuai {
+        display: inline-block;
+    }
+
+    .pe-title {
+        padding-top: 10px;
+        width: 400px;
+        min-height: 100px;
+        padding-left: 140px;
+        float: left;
+    }
+
+    .Per-img {
+        height: 98px;
+        width: 98px;
+    }
+
+    .Per-img-c {
+        position: absolute;
+        float: left;
+    }
+
+    .per-price {
+        padding-top: 10px;
+        float: left;
+        text-align: center;
+        position: relative;
+        color: #333;
+        width: 230px;
+        height: 34px;
+    }
+
+    .per-opr {
+        padding-top: 10px;
+        float: left;
+        position: relative;
+        color: #333;
+        width: 80px;
+        height: 34px;
+    }
+
+
+    /* 加减组件 css样式 */
+
+    .button_btn {
+        margin-top: 15px;
+        float: left;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        height: 24px;
+        width: 106px;
+    }
+
+    .button_btn>input {
+        width: 48px;
+        display: inline-block;
+        border: 0;
+        font-size: 12px;
+        text-align: center;
+        color: #333;
+        outline: none;
+    }
+
+    .button_btn>span {
+        line-height: 22px;
+        text-align: center;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    .button_w {
+        width: 170px;
+    }
+
+    /* 加减组件 css样式 end */
+
+    .PerItem a {
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .PerItem a:hover {
+        color: #b4a078;
+    }
+
+    .PerItem .pe-title-a a i,
+    .PerItem .pe-title-a a {
+        color: #999;
+        line-height: 16px;
+        font-size: 12px;
+    }
+
+    .red {
+        color: #d4282d;
+        font-size: 14px;
+    }
+
+    .rgb {
+        color: #333;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <div class="product-box container">
+        <div class="PerItem">
+            <div class="cart-item ">
+                <div class="Per-img-c">
+                    <div class="hnkuai">
+                        <input type="checkbox" class="inpUt " title="" checked="">
+                    </div>
+                    <div class="hnkuai">
+                        <a href="#">
+                            <img src="../image/c2dd658bed1bc137eb3d186a15154c83.png" alt="" class="Per-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="hnkuai pe-title ">
+                    <a href="#">莲叶田田·100年传世珐琅锅24cm</a>
+                    <div class=" pe-title-a">
+                        <a href="#">24cm/薄荷绿
+                            <i class="iconfont icon-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="per-price rgb">
+                ¥
+                <span>342.33</span>
+            </div>
+            <!-- 加减组件 -->
+            <div class="button_btn">
+                <span class="" style="border-right: 1px solid #ddd;">
+                    <i class="iconfont icon-jian"></i>
+                </span>
+                <input type="text">
+                <span style="border-left: 1px solid #ddd;">
+                    <i class=" iconfont icon-jia"></i>
+                </span>
+            </div>
+            <!-- 加减组件end -->
+            <div class="per-price red">
+                ¥
+                <span>342.33</span>
+            </div>
+            <div class="per-opr">
+                <div>
+                    <a href="#">移入收藏夹
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        删除</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

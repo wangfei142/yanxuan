@@ -1,0 +1,438 @@
+.topNav{
+    width: 100%;
+    height: 50px;
+    background: white;
+    border-bottom: 1px solid darkgrey;
+    box-shadow: darkgrey 0 0 10px 0;
+    position: fixed;
+    top: -50px;
+    left: 0;
+    z-index: 50;
+}
+.scrollNav{
+    width: 1090px;
+    margin: 0 auto;
+    position: relative;
+}
+.scroll-dl{
+    left: -170px;
+    right: auto;
+    top: 39px;
+}
+.scroll-dl dl{
+    float: left;
+    margin-right: 20px;
+    width: 124px;
+}
+
+.scroll-dl dl dd{
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.scroll-dl dl dt{
+    cursor: pointer;
+}
+
+.scroll-dl dl dt:hover {
+    color: #B4A078;
+}
+.scrollNavLogo{
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    z-index: 1;
+    display: block;
+    width: 90px;
+    height: 30px;
+    background: url(../images/scrollNav.png) center left;
+    background-position:  0 238px;
+}
+
+.scroll-dl img{
+    height: 50px;
+    display: inline-block;
+    float: left;
+}
+
+.scroll-dl span{
+    font-weight: normal;
+    font-size: 14px;
+    float: left;
+    line-height: 50px;
+    display: inline-block;
+}
+
+.scroll-dl {
+    position: absolute;
+    width: 1202px;
+    display: none;
+    cursor: default;
+    color: black;
+    background: white;
+    z-index: 30;
+    padding: 14px 20px 20px;
+}
+.scroll-ul{
+    top: 11px;
+    left: 126px;
+    bottom: auto;
+    width: 838px;
+    position: absolute;
+}
+.scroll-li{
+    padding: 6px 21px;
+}
+.scroll-li-f{
+    color: #B4A078;
+    border-bottom: 3px solid #B4A078;
+    text-decoration: none;
+}
+.scroll-li:hover {
+    color: #B4A078;
+    border-bottom: 3px solid #B4A078;
+    text-decoration: none;
+}
+.scroll-ul li{
+    float: left;
+    margin-top: 7px;
+    margin: 0 17px;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.scrollNavSearch,.scrollNavLogin,.scrollNavShop{
+    cursor: pointer;
+    float: right;
+    line-height: 36px;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    background: url(../images/scrollNav.png);
+    margin:21px 15px; 
+}
+.scrollNavSearch{
+    width: 20px;
+    height: 20px;
+    background-position:  0 -366px;
+}
+.scrollNavSearch:hover{
+    background-position:  0 -336px;
+}
+.scrollNavLogin{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-position:  0 -488px;
+}
+.scrollNavLogin:hover{
+    background-position:  0 -456px;
+}
+.scrollNavShop{
+    width: 24px;
+    height: 24px;
+    background-position:0 -142px;
+    position: relative;
+}
+.scrollNavShop:hover{
+    background-position:0 -80px;
+}
+.scrollNavShop i{
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    background: url(../images/scrollNav.png);
+    background-position: 0 -51px;
+    top:-10px;
+    left: 15px;
+}
+.scrollSearch{
+    position: absolute;
+    right: 155px;
+    top: 20px;
+    display: none;
+}
+.scrollSearch button{
+    position: absolute;
+    top: 1px;
+    right: 270px;
+    border: none;
+    background: white
+}
+.scrollSearch button:hover{
+    color: #D8CEBC;
+}
+.scrollSearch input{
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    border: 0;
+    border-bottom: 1px solid #D8CEBC;
+    font-size: 12px;
+    width: 252px;
+    outline: 0;
+    overflow: hidden;
+    background: 0 0;
+    border-radius: 0;
+    padding-left: 10px;
+}
+.scrollNavLogin-erul{
+    width: 83px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+    display: none;
+    z-index: 5;
+}
+.scrollNavLogin-erul{
+    top: 28px;
+    left: -27px;
+}
+.scrollNavLogin-erul li{
+    display: block;
+    margin: 0 13px;
+    color: #999;
+    box-sizing: border-box;
+    line-height: 38px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 50px;
+}
+.scrollNavLogin i{
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    display: none;
+}
+.scrollNavLogin-erul li:hover{
+    color: #b4a078;
+}
+
+
+
+/* 登陆注册css */
+
+
+.login_box_body {
+    z-index: 1170;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(000, 000, 000, 0.7);
+    display:none;
+}
+
+.login_box {
+    position: fixed;
+    width: 384px;
+    height: 400px;
+    background-color: #fff;
+    border: #fff solid 1px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.login_title_t {
+    padding-top: 58px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin: auto;
+    line-height: 18px;
+    width: 290px;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.login_title_left {
+    float: left;
+    cursor: pointer;
+
+}
+
+.login_title_right {
+    float: right;
+    cursor: pointer;
+}
+
+.login_t_result {
+    color: #999;
+}
+
+.login_t_result:hover {
+    color: #b4a078;
+}
+
+.login_title_t span {
+    font-size: 25px;
+    color: #ccc;
+}
+
+.title_span {
+    position: absolute;
+    right: 0px;
+    font-size: 30px;
+    right: -44px;
+    font-size: 30px !important;
+    top: 10px;
+
+}
+
+.title_span:hover {
+    color: #999;
+    cursor: pointer;
+}
+
+.login_nei_box {
+    width: 304px;
+    height: 314px;
+    /* border: #999 solid 1px; */
+    margin: 20px 40px 83px;
+}
+
+.login_nei_mima {
+    height: 26px;
+    float: right;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    /* background: #b4a078; */
+}
+
+.login_nei_mima:hover {
+    color: #b4a078;
+}
+
+.login_input_box {
+    margin-top: 15px;
+    width: 294px;
+    height: 38px;
+    border: 1px solid #e8e8e8;
+    line-height: 36px;
+    border-radius: 2px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.login_input {
+    /* float: right; */
+    width: 203px;
+    height: 38px;
+    border: none;
+    outline: none;
+    /* margin-left: 10px */
+}
+
+/* .login_input_box span{
+    color: #666;
+    font-size: 20px;
+} */
+
+.login_input_box>span>i {
+    color: rgb(199, 199, 199);
+    font-size: 23px;
+}
+
+.login_input_btn>button {
+    margin-top: 40px;
+    display: block;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background: #b4a078;
+    font-size: 18px;
+    line-height: 48px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+}
+
+.login_input_btn>button:hover {
+    background: #b8a683;
+}
+
+.login_dl_footer {
+    height: 60px;
+    background: #F5F3EF;
+    overflow: hidden;
+    width: 384px;
+    bottom: -1px;
+    left: -1px;
+    position: absolute;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.login_dl_footer>span {
+    cursor: pointer;
+    padding-left: 15px;
+    color: #999;
+    font-size: 25px;
+}
+
+.login_dl_footer>span:hover,
+.login_dl_footer>a:hover {
+    color: #b4a078;
+}
+
+.login_dl_footer>a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    float: right;
+    padding-left: 10px
+}
+
+.login_tishi_t {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.input_del {
+    color: rgb(209, 208, 208) !important;
+    font-size: 14px !important;
+    height: 20px;
+    width: 20px;
+    line-height: 21px;
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.input_del_account {
+    display: none;
+}
+
+.input_del_pwd,
+.input_change {
+    display: none;
+}
