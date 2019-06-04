@@ -207,7 +207,7 @@ var smallTimer = setInterval(smallBanner,1000)
         // }
         if ( mail == '') {
             $.post(
-                "./php/loginphone.php",
+                "./register/php/loginphone.php",
                 { phone: phone, pwd_login: pwd_login },
                 function (data) {
                     if (data.dig == 200) {
@@ -222,7 +222,7 @@ var smallTimer = setInterval(smallBanner,1000)
                 }, "json");
         } else if ( phone == '') {
             $.post(
-                "./php/loginmail.php",
+                "./register/php/loginmail.php",
                 { mail: mail, pwd_login: pwd_login },
                 function (data) {
                     if (data.dig == 200) {
@@ -267,8 +267,56 @@ var smallTimer = setInterval(smallBanner,1000)
     $('.shopcar').mouseout(function () {
         $('.shopcar .adddet').hide();
     });
-
-
+    
+         
+        function initA() {
+            var carS = new CarS();
+    
+            function CarS() {}
+            // //获取购物车商品
+            CarS.prototype.getCar = function () {
+                //     //没有数据默认返回一个空数组
+                return JSON.parse(localStorage.getItem('cartlist')) || [];
+            }
+    
+            var cartlistA = carS.getCar();
+            // //循环购物车商品，构建tr标签
+            var strA = ``;
+            var numA = 0;
+            var price_unmA = 0;
+            var det_num = 0;
+            for (var i = 0; i < cartlistA.length; i++) {
+                var itemPrice = parseFloat(cartlistA[i].money) * parseInt(cartlistA[i].number);
+                numA += cartlistA[i].number;
+                price_unmA += itemPrice;
+                strA += ` <div class="detlist">
+                        <div class="detlist-left ">
+                            <img src="./details/images/img1/1.jpg" alt=""><span></span>
+                        </div>
+                        <div class="dettxt">
+                            <div class="detDescribe">
+                                <div class="p-1">${cartlistA[i].title}</div><i class="i-2">￥</i><span class="span-0">${cartlistA[i].money}</span>
+                                <div class="p-2"> <span class="detN">1个装</span>
+                                    <span class="detNum"> &nbsp;x <i class="dgNum">${cartlistA[i].number}</i></span></div>
+    
+                            </div>
+                        </div>
+                        <p class="del-det">
+                            <i onclick="car.delGoods(${cartlistA[i].id})"></i>
+                        </p>
+                    </div>`;
+                det_num = cartlistA[i].number
+    
+            }
+            // 所有商品
+            console.log(numA)
+            $(".pop").html(strA);
+            $('.i-1').html(numA);
+            // 已选商品数量
+            // 所有商品总价格
+            $('.total-prices i').html(price_unmA);
+        }
+        initA();
   
     // 小轮播
     var banner1Index=0
@@ -294,3 +342,14 @@ var smallTimer = setInterval(smallBanner,1000)
             focusBannerl()
         }
     )
+
+    //跳转结算页面s
+    $('.total-right').click(function(){
+        location.href = '../shopping/shopping.html'
+    })
+    $('.niunai').click(function(){
+        window.location.href = '../details/details.html?id=4'
+    })
+    $('.putao').click(function(){
+        window.location.href = '../details/details.html?id=5'
+    })

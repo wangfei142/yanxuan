@@ -718,8 +718,12 @@
 .newitemList a{
     width: 100%;
     height: 100%;
+    display:block;
+    cursor: pointer;
 }
-
+.m-product .newitemList-img{
+    cursor: pointer;
+}
 .colorNum{
     position: absolute;
     top: 10px;
