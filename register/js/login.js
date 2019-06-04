@@ -61,20 +61,20 @@ $('.pwd').on('keyup', function () {
     if (pwdaVl.length < 6) {
         $(".pwd ").next().html("✗ 最短6位，最长16位").css('color', 'red');
         return pwdfa = false;
-    } else if (pattern.test(pwdaVl)) {
+    } else if (reg.test(pwdaVl)) {
         $(".pwd ").next().html("✓ 密码过于简单！建议更换！").css('color', 'orange');
         return pwdfa = true;
-    } else if (pattern.test(pwdaVl) || pattern.test(pwdaVl)) {
+    } else if (pattern.test(pwdaVl) || reg.test(pwdaVl)) {
         $(".pwd ").next().html("✓ 中级密码强度！可以使用！").css('color', 'green');
         return pwdfa = true;
-    } else if (pattern.test(pwdaVl) || pattern.test(pwdaVl) || expert.test(pwdaVl)) {
+    } else if (pattern.test(pwdaVl) || reg.test(pwdaVl) || expert.test(pwdaVl)) {
         $(".pwd ").next().html("✓ 高级密码强度！没人会知道你的密码了！可以使用！").css('color', 'green');
         return pwdfa = true;
     }
 });
 
 //再次验证密码
-$('.repwd').on('blur', function () {
+$('.repwd').on('keyup', function () {
     var pwdaVl = $('.pwd').val();
     var repwd = $('.repwd').val();
     if (repwd == '') {
