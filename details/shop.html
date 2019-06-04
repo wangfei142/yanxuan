@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单个商品</title>
+
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="./js/jquery.js"></script>
+</head>
+<style>
+    .shop_box {
+        width: 1090px;
+        height: 363px;
+        border: solid #ccc 1px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .left_btn,
+    .right_btn {
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        margin-top: -16px;
+        cursor: pointer;
+        background-color: rgb(241, 193, 138);
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .left_btn {
+        left: 10px;
+    }
+
+    .right_btn {
+        right: 10px;
+    }
+
+    .left_btn i,
+    .right_btn i {
+        color: #fff;
+    }
+
+    .shop_box_nei {
+        margin: auto;
+        height: 288px;
+        width: 960px;
+        overflow: hidden;
+        /* float: left; */
+    }
+
+
+    .shop_title {
+        height: 44px;
+        padding-left: 22px;
+        width: 1068px;
+        background-color: #f5f5f5;
+        overflow: hidden;
+        line-height: 44px;
+    }
+
+    .shop_title>h3 {
+        padding-left: 22px;
+        font-size: 17px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .shop {
+        width: 210px;
+        height: 279px;
+        /* border: solid #ccc 1px; */
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        margin-right: 30px;
+    }
+
+    /* 220.5×220.5 */
+
+    .shop_img {
+        width: 210px;
+        height: 210px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .shop_img>img {
+        display: inline-block !important;
+        vertical-align: middle;
+    }
+
+    .shop:hover img {
+        transform: scale(1.05);
+        transition: 1s;
+
+    }
+
+    .shop_img>span {
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        display: inline-block;
+    }
+
+    .shop_jia>span {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        color: #fff;
+        padding: 0 5px;
+        font-size: 12px;
+        background-color: #e36844;
+    }
+
+    .shop_h {
+        text-align: center;
+        margin: auto;
+    }
+
+    .shop_h:hover {
+        color: peru;
+        cursor: pointer;
+    }
+
+    .shop_h>h6 {
+        margin-top: 5px;
+        display: inline-block;
+        width: 180px;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        /* text-overflow: ellipsis; */
+     
+    }
+
+    .shop_price>span {
+        color: #d4282d;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .shop_price i {
+        color: peru;
+        font-size: 15px;
+    }
+
+    .shop_price>a {
+        text-align: center;
+        line-height: 20px;
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+        background-color: rgb(255, 234, 208);
+        border-radius: 50%;
+    }
+
+    .box_b {
+        position: relative;
+        width: 1920px;
+    }
+</style>
+
+<body>
+    <div class="shop_box">
+        <div class="shop_title">
+            <h3>猜你喜欢</h3>
+        </div>
+        <div class="left_btn">
+            <i class="iconfont icon-icon-right-copy"></i>
+        </div>
+        <div class="right_btn">
+            <i class="iconfont icon-icon-right"></i>
+        </div>
+        <div class="shop_box_nei">
+            <div class="box_b">
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+                <div class="shop">
+                    <dl>
+                        <dd class="shop_img">
+                            <img src="./image/10471967f5046ae50c8788de1fb82845.png" alt="">
+                            <span></span>
+                        </dd>
+                        <dt class="shop_jia">
+                            <span>加价购</span>
+                        </dt>
+                        <dt class="shop_h">
+                            <h6>精致的不锈钢心</h6>
+                        </dt>
+                        <dt class=" shop_price">
+                            <span>￥299</span>
+                            <a href="javascript:;">
+                                <i class="iconfont icon-gouwuche1"></i>
+                            </a>
+                        </dt>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+<script>
+
+    $('.left_btn').on('click', function () {
+
+        $('.box_b').animate({ left: -960 }, 1000)
+        console.log(1)
+    });
+
+    $('.right_btn').on('click', function () {
+
+
+        $('.box_b').animate({ left: 0 }, 1000)
+    })
+
+</script>
+
+</html>

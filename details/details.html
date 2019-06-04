@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易严选</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/details.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./css/font_1213560_6f53jwsmd9s/iconfont.css">
+    <link rel="stylesheet" href="./vendors/layer/mobile/need/layer.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./vendors/layer/layer.js"></script>
+    <script src="./js/animate6.1.0.js"></script>
+</head>
+
+<body>
+        <div class="zhegai">
+            </div>
+    <!-- header start -->
+    <div class="header clearfix">
+        <!-- 页头开始 -->
+        <div class="title">
+            <div class="title-main container">
+                <div class="topauto pull-left">
+                    <span class="iconfont  pull-left">&#xe61a;</span>
+                    <ul class="pull-left topauto-ul">
+                        <li class="topauto-li">撒大大大所大大所多</li>
+                    </ul>
+                </div>
+                <script>
+                    //通告栏文字滚动
+                    (function () {
+                        var topautoTimer = setInterval(autoLi, 3000)
+
+                        function autoLi() {
+                            $('.topauto-li').animate({
+                                top: "-20px"
+                            }, 500, function () {
+                                $('.topauto-li')[0].style.top = 12 + "px"
+                            })
+                        }
+                        $('.topauto-ul').hover(function () {
+                            clearInterval(topautoTimer)
+                            $('.topauto-li').css("color", "white")
+                            $('.topauto-li').css("text-decoration", "none")
+                        }, function () {
+                            $('.topauto-li').css("color", "#b4a078")
+                            $('.topauto-li').css("text-decoration", "underline")
+                            topautoTimer = setInterval(autoLi, 1000)
+                        })
+                    })()
+                </script>
+                <ul class="pull-right title-li">
+                    <li>登录</li>
+                    <li class="title-right">注册</li>
+                    <li class="title-right">我的订单</li>
+                    <li class="title-right">会员</li>
+                    <li class="title-right">甄选家</li>
+                    <li class="title-right title-li-er">企业采购<span class="iconfont">&#xe60b;</span><i
+                            class="iconfont">&#xeb6d;</i>
+                        <ul class="title-li-erul">
+                            <li>企业购</li>
+                            <li>礼品卡</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </li>
+                    <li class="title-right title-li-er">客户服务<span class="iconfont">&#xe60b;</span><i
+                            class="iconfont">&#xeb6d;</i>
+                        <ul class="title-li-erul">
+                            <li>帮助中心</li>
+                            <li>商务合作</li>
+                            <li>开放平台</li>
+                        </ul>
+                    </li>
+                    <li><em class="iconfont">&#xe609;</em>APP</li>
+                </ul>
+                <script>
+                    $(".title-li-er").hover(function () {
+                        $(this).children().eq(1).css('display', 'block')
+                        $(this).children().eq(2).css('display', 'block')
+                    }, function () {
+                        $(this).children().eq(1).css('display', 'none')
+                        $(this).children().eq(2).css('display', 'none')
+                    })
+                </script>
+            </div>
+        </div>
+        <!-- 页头结束 -->
+        <div class="nav">
+            <div class="nav-main container">
+                <img src="./images/navlogo.gif" class="pull-left">
+                <div class="pull-left form-search">
+                    <span class="iconfont">&#xe60d;</span>
+                    <input type="text" placeholder="搜索你想要的商品">
+                    <button>搜索</button>
+                </div>
+                <div class="search-show">
+                    <div class="search-list">
+                        <ul class="search-ul">
+                            <li>小熊饼干</li>
+                            <li>小熊干脆面</li>
+                            <li>小熊泡面</li>
+                            <li>小熊辣条</li>
+                            <li>小熊奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小猫饼干</li>
+                            <li>小猫干脆面</li>
+                            <li>小猫泡面</li>
+                            <li>小猫辣条</li>
+                            <li>小猫奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小狗饼干</li>
+                            <li>小狗干脆面</li>
+                            <li>小狗泡面</li>
+                            <li>小狗辣条</li>
+                            <li>小狗奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小鸡饼干</li>
+                            <li>小鸡干脆面</li>
+                            <li>小鸡泡面</li>
+                            <li>小鸡辣条</li>
+                            <li>小鸡奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小熊饼干</li>
+                            <li>小熊干脆面</li>
+                            <li>小熊泡面</li>
+                            <li>小熊辣条</li>
+                            <li>小熊奶茶</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script>
+                        //搜索栏列表轮播
+                        (function () {
+                            var searchTimer = setInterval(autoUl, 5000)
+                            var searchIndex = 0
+
+                            function autoUl() {
+                                if (searchIndex < -81) {
+                                    $(".search-list").css("top", 0)
+                                    searchIndex = 0
+                                }
+                                searchIndex -= 27
+                                $(".search-list").animate({
+                                    top: searchIndex + "px"
+                                }, 1000)
+                            }
+                            $(".search-ul").children().hover(function () {
+                                $(this).css("color", "#B4A078")
+                                clearInterval(searchTimer)
+                            }, function () {
+                                $(this).css("color", "#999")
+                                searchTimer = setInterval(autoUl, 5000)
+                            })
+                        })()
+                </script>
+                <div class="shopcar">
+                    <div class="shopcarShow">
+                        <em class="iconfont">&#xe600;</em>
+                        <span>购物车</span>
+                        <i>0</i>
+                        <div class="adddet">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="navli">
+                    <ul>
+                        <li><a href="#" class="navli-a">首页</a></li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+
+                                </dl>
+                            </div>
+                        </li>
+
+                        <li class="navli-bor"><a href="#">首页首页</a></li>
+                        <li><a href="#">首页</a></li>
+                    </ul>
+                </div>
+                <script>
+                    $('.navli-er').hover(function () {
+                        $(this).children().eq(1).fadeIn('fast')
+                    }, function () {
+                        $(this).children().eq(1).fadeOut()
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- title-t -->
+    <div class="title-t">
+        <div class="w">
+            <p><span>首页</span><em class="iconfont">&#xe604;</em><a href="#">jujiashu</a><em
+                    class="iconfont">&#xe604;</em><a href="#">peizipeiri</a><em
+                    class="iconfont">&#xe604;</em><span>weewewerwerwerwe</span></p>
+        </div>
+    </div>
+    <!-- commodity -->
+    
+    <div class="w">
+
+        <div class="commodity clearfix">
+            <div class="commodity-left fl">
+                <p class="bigimg"> <img src="images/img1/1-1.jpg" alt="" class="fl">
+                    <span class="mask"></span>
+                  <span class="zoom"></span> <em class="zoom-t"></em>
+                </p>
+           
+                <div class="carousel clearfix">
+                    <p class="carousel-l fl"><i></i><span></span></p>
+                    <ul class="imglb">
+                        <li style="z-index: 10"><img src="images/img1/1-2.jpg" alt="" class="carousel-img" style="background: #f4f4f4"> </li>
+                        <li style="z-index: 9"> <img src="images/img1/2-2.jpg" alt="" class="carousel-img"> </li>
+                        <li style="z-index: 8"><img src="images/img1/3-2.jpg" alt="" class="carousel-img"> </li>
+                        <li style="z-index: 7"><img src="images/img1/4-2.jpg" alt="" class="carousel-img" > </li>
+                        <li style="z-index: 6"><img src="images/img1/5-2.jpg" alt="" class="carousel-img"> </li>
+     
+                    </ul>
+                    <p class="carousel-r fr"><i></i><span></span></p>
+                    <p class="gb-carousel"></p>
+                </div>
+                <ul class="clearfix ul1">
+                    <li><img src="images/img1/1.jpg" alt=""></li>
+                    <li><img src="images/img1/2.jpg" alt=""></li>
+                    <li><img src="images/img1/3.jpg" alt=""></li>
+                    <li><img src="images/img1/4.jpg" alt=""></li>
+                    <li><img src="images/img1/5.jpg" alt=""></li>
+                </ul>
+
+                <div class="imgB">
+                    <img src="images/img1/1-2.jpg" alt="">
+                </div>
+
+
+                <p class="purchase"><a href="#">企业采购更优惠<em class="iconfont">&#xe604;</em></a></p>
+            </div>
+
+            <div class="commodity-right fr">
+                <p class="manufacturer"><a href="#">泰国制造商</a></p>
+                <p class="product clearfix"><span class="fl">泰国制造 天然乳胶枕 护颈优眠 升级抗菌</span><a href="#" class="fr">99%</a>
+                </p>
+                <p class="product-b clearfix"><span class="fl">SGS全程监控，93%天然乳胶</span><a href="#"
+                        class="fr">好评率&nbsp;>&nbsp;</a></p>
+                <p class="time-to"><span class="fl span1">限时购</span><span class="fl span2">距优惠结束</span><em
+                        class="fl"><span class='time-h'> 14 </span> 时<span class='time-m'> 21 </span>分<span
+                            class='time-t'> 44
+                        </span>秒</em> <img src="images/time.gif" alt=""></p>
+                <div class="commodity-r-cent clearfix">
+                    <ul>
+                        <li class="li-1"><i>活动价</i> <span class="li1-span-1">￥</span><span class="li1-span-2">198</span>
+                            <em>￥299</em><a href="#">新人专享价</a></li>
+                        <li class="li-2"><i>购物返</i> <span>新用户最高返</span><em>¥1.99回馈金 + 18积分</em> <a href="#"
+                                class="iconfont">&#xe626;</a></li>
+                        <li class="li-3"><i>领券</i> <a href="#"><span class="juan">新人15元直减</span> <span
+                                    class="lq">领取</span></a> <a href="#"><span class="juan juan1">每满249减25券</span> <span
+                                    class="lq">领取</span></a><a href="#">更多 ></a></li>
+                        <li class="li-4"><i>配送</i> <span class="span1">至</span>
+                            <p class="city"><span>请选择收货地址</span><em class="iconfont">&#xe610;</em></p>
+                            <em>11:10前完成支付, 预计(今天)05月29日送达</em>
+                        </li>
+                    </ul>
+                    <div class="serve">
+                        <p class="fl">服务</p> <span><a href="#">
+                                ･ 支持30天无忧退换货 &emsp; ･ 48小时快速退款 &emsp; ･ 满88元免邮费 &emsp; ･ 网易自营品牌 &emsp; ･ 国内部分地区无法配送
+                            </a></span>
+                    </div>
+
+                </div>
+                <div class="spec clearfix">
+                    <p class="span-ge fl">规格</p>
+                    <div class="spec-p1 fl"><img src="images/img1/guige1.png" alt="" class="img-1">
+                        <p class="p-1">1个装</p>
+                        <p class="xuanzhon"></p>
+                    </div>
+                    <div class="spec-p2 fl"><img src="images/img1/guige2.png" alt="" class="img-2">
+                        <p class="p-2">2个装</p>
+                        <p class="xuanzhon"></p>
+                    </div>
+
+
+
+                </div>
+                <div class="num clearfix">
+                    <span class="fl">数量</span> <em class="minus">-</em><input type="text" class="amount" value="1"><em
+                        class="add">+</em>
+                </div>
+                <div class="shop">
+                    <p class="nowshop">立即购买</p>
+                    <p class="shopcar2"><em class="iconfont">&#xe602;</em>加入购物车</p>
+                    <p class="collect"><em class="iconfont">&#xe632;</em>收藏</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer start -->
+    <div class="footer">
+        <div class="foot">
+            <div class="foot-nome foot-cp" style="border-left:none;">
+                <h4>客户服务</h4>
+                <a class="btn_bt" href="javascript:;">
+                    <i class="iconfont icon-kefu"></i>
+                    <div>在线客服</div>
+                </a>
+                <a class="btn_bt" href="javascript:;">
+                    <i class="iconfont icon-xinxi"></i>
+                    <div>用户反馈</div>
+                </a>
+            </div>
+            <div class="foot-two foot-cp">
+                <div>
+                    <h4>何为严选
+                    </h4>
+                    <p>网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品
+                    </p>
+                </div>
+                <div>
+                    <span class="spAn">关注我们 :</span>
+                    <i class=" iconfont icon-wenhao spa"></i>
+                    <i class=" iconfont icon-weixin spb"></i>
+                    <i class=" iconfont icon-weibo spc"></i>
+                </div>
+            </div>
+            <div class="foot-three foot-cp">
+                <h4>扫码下载严选APP</h4>
+                <img src="./images/codetow.png" alt="" style="display: inline-block">
+                <div class="p_mp">下载领1000元新人礼包</div>
+            </div>
+
+
+
+        </div>
+        <div class="footend ">
+            <div class="container">
+                <ul class="ulst ">
+                    <li>
+                        <span>
+                            <i class="iconfont icon-wangyi"></i>
+                        </span>
+                        <em>网易自营电商</em>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="iconfont icon-zhibao"></i>
+                        </span>
+                        <em>30天无忧退换货</em>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="iconfont icon-huoche"></i>
+                        </span>
+                        <em>满88元免邮费</em>
+                    </li>
+                    <li style=" margin: 0;">
+                        <span>
+                            <i class="iconfont icon-huizhang"></i>
+                        </span>
+                        <em>品质保证</em>
+                    </li>
+                </ul>
+
+                <div class="footerend">
+                    <div class="footer_div ">
+                        <a href="#">关于我们</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#"> 帮助中心</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">售后服务</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">配送与验收</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">商务合作</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">企业采购</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">开放平台</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">搜索推荐</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">友情链接</a>
+                    </div>
+                    <div style="margin: 11px 0">
+                        <div class="footer_div">
+                            <a href="#"> 食品经营许可证：JY13301080111719</a>
+                            &nbsp;
+                            <a href="#">出版物经营许可证：新出发滨字第0132号</a>
+                            &nbsp; 妙得ICP证号：ICP 证浙B2-20160106 &nbsp;
+                            <a href="#"> 第二类医疗器械经营备案</a>
+                            &nbsp;
+                            <a href="#">营业执照 </a>
+                            &nbsp; 网易公司版权所有 © 1997-2019
+                        </div>
+
+                    </div>
+                    <div class="footer_div">
+                        （粤）网械平台备字（2019）第00004号 &nbsp;
+                        <a href="#">单用途商业预付卡备案证：330100AAC0024</a>
+                        <img src="./images/heheheh.gif" alt="" style="display: inline-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+</body>
+<script src="./js/datails.js"></script>
+
+</html>
