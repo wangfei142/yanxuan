@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+
+    <script src="car.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        .shopcar {
+            position: relative;
+            /* margin-top: -56px; */
+            margin-left: 49px;
+            float: right;
+            z-index: 4;
+            padding-bottom: 20px;
+        }
+
+        .shopcarShow {
+            position: relative;
+            cursor: pointer;
+            width: 134px;
+            height: 38px;
+            border: 1px solid #B4A078;
+            border-radius: 19px;
+            padding: 8px 0 10px 25px;
+        }
+
+        .shopcarShow span,
+        .shopcarShow em {
+            color: #B4A078;
+            font-size: 14px;
+        }
+
+        .shopcarShow .i-1 {
+            color: white;
+            font-size: 13px;
+            text-align: center;
+            display: inline-block;
+            background: #d4282d;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            position: absolute;
+            top: 4px;
+            right: 17px;
+        }
+
+        .shopcarShow:hover {
+            background: #ccc;
+        }
+
+        .shopcar .adddet {
+            position: absolute;
+            right: 0px;
+            top: 40px;
+            z-index: 1;
+            padding-top: 10px;
+            padding-right: 10px;
+            overflow: visible;
+            display: none;
+
+        }
+
+        .adddet-c {
+            position: relative;
+            width: 330px;
+            height: 328px;
+            border: 1px solid #b5a176;
+            border-top: 2px solid #d7ccb6;
+            background-color: #fff;
+            -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+            box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+            /* overflow: auto; */
+        }
+
+        .adddet-c .em2,
+        .adddet-c .em1 {
+            position: absolute;
+            right: 40px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+
+        }
+
+        .adddet-c .em2 {
+            top: -6px;
+            border-bottom: 8px solid #fff;
+        }
+
+        .adddet-c .em1 {
+            top: -8px;
+            border-bottom: 8px solid #d7ccb6;
+
+        }
+
+        .pop {
+            overflow: auto;
+            height: 250px;
+        }
+
+        .detlist {
+            height: 70px;
+            /* padding: 0 0 10px 15px; */
+            background-color: #fff;
+        }
+
+        .detlist-left {
+
+            background: #f4f4f4;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 14px;
+            float: left;
+            margin-left: 13px;
+        }
+
+        .detlist-left img {
+            vertical-align: middle;
+            display: inline-block;
+            width: 60px;
+        }
+
+        .detlist-left span {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 0;
+        }
+
+        .detDescribe .p-2 {
+            height: 20px;
+            margin-top: 27px;
+        }
+
+        .detDescribe {
+            position: relative;
+            float: left;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 25px;
+            /* padding: 12px 0 10px; */
+
+            height: 50px;
+            /* line-height: 45px; */
+            /* margin-top: 20px; */
+
+            margin-left: 10px;
+        }
+
+        .detDescribe .p-1 {
+
+            float: left;
+            display: inline-block;
+            width: 130px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 5px;
+        }
+
+
+
+        .detDescribe .detN,
+        .detDescribe .detNum {
+            float: left;
+            display: inline-block;
+            color: #ccc;
+            font-size: 11px;
+            height: 20px;
+
+        }
+
+        .detDescribe .p-1 i {
+            text-align: right;
+            font-size: 11px;
+            color: #b62628;
+            line-height: 11px;
+            float: left;
+            width: 50px;
+            height: 20px;
+
+        }
+
+        .detDescribe .span-0,
+        .detDescribe .i-2 {
+
+            font-size: 12px;
+            float: left;
+            color: #b62628;
+        }
+
+        .del-det {
+            width: 20px;
+            height: 20px;
+            float: right;
+        }
+
+        .del-det i {
+            display: inline-block;
+            background-position: 0 -40px;
+            height: 10px;
+            width: 11px;
+            background-image: url("./del.png");
+            margin-top: 31px;
+            cursor: pointer;
+            margin-left: -10px;
+        }
+
+        .to-shopC {
+            height: 66px;
+            background-color: #f4f0ea;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .to-shopC .total-left {
+            margin: 13px 0 0 15px;
+        }
+
+        .to-shopC .total-left .total-dat {
+            color: #999;
+            font-size: 14px;
+
+        }
+
+        .to-shopC .total-left .total-prices {
+            color: #BE4141;
+            font-size: 14px;
+            margin-top: -8px;
+        }
+
+        .total-prices span {
+            color: #BE4141;
+        }
+
+        .total-right {
+            float: right;
+            width: 110px;
+            margin-right: 30px;
+            height: 36px;
+            line-height: 36px;
+            margin-top: 15px;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 2px;
+            color: #fff;
+            border: 1px solid #b4a078;
+            background-color: #b4a078;
+
+        }
+
+
+        .total-right:hover {
+            color: #fff;
+            border: 1px solid #c0ae8a;
+            background-color: #c0ae8a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shopcar">
+        <div class="shopcarShow">
+            <em class="iconfont em-1">&#xe606;</em>
+            <span class="span-1">购物车</span>
+            <i class="i-1">0</i>
+            <div class="adddet">
+                <div class="adddet-c">
+                    <em class="em1"></em>
+                    <em class="em2"></em>
+                    <div class="pop">
+
+                        <!-- <div class="detlist">
+                            <div class="detlist-left ">
+                                <img src="./details/images/img1/1.jpg" alt=""><span></span>
+                            </div>
+                            <div class="dettxt">
+                                <div class="detDescribe">
+                                    <div class="p-1"> 泰国制造 天然乳胶枕 护颈优眠 升级抗菌 </div><i class="i-2">￥</i><span class="span-0">399.00</span>
+                                    <div class="p-2"> <span class="detN">1个装</span>
+                                        <span class="detNum"> &nbsp;x <i class="dgNum">1</i></span></div>
+
+                                </div>
+                            </div>
+                            <p class="del-det">
+                                <i></i>
+                            </p>
+                        </div> -->
+                    </div>
+
+                    <div class="to-shopC">
+                        <div class="total-left" style="float: left;">
+                            <p class="total-dat">商品合计：</p>
+                            <p class="total-prices"><span>￥</span><i>399.00</i></p>
+                        </div>
+                        <div class="total-right">
+                            去购物车结算
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="container">
+        <h1>商品列表</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>商品名称</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>商品价格</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>黑科技吸放湿超冷感垫 夏凉垫可机洗</td>
+                    <td>玉石冷感纤维，可水洗接触清凉</td>
+                    <td>199.00</td>
+                    <td>./images/5432edbf182a45996e84ab5c63952a26.png</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="addCar(this)">加入购物车</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>黑科技吸放湿超冷感垫 夏凉垫可机洗</td>
+                    <td>24cm/薄荷绿</td>
+                    <td>784.00</td>
+                    <td>./images/10471967f5046ae50c8788de1fb82845.png</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="addCar(this)">加入购物车</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>20寸 纯PC拉链拉杆箱</td>
+                    <td>小巧尺寸 51升轻松出行</td>
+                    <td>211.00</td>
+                    <td>./images/adb66c58cbcb75db5b3054fe180e68fb.png</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="addCar(this)">加入购物车</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>男式精梳棉圆领短袖T恤衫</td>
+                    <td>干净素色圆领，青春感无限</td>
+                    <td>49.5</td>
+                    <td>./images/af76383849bd463bb60571dff062a688.png</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="addCar(this)">加入购物车</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="file:///C:/Users/DELL/Desktop/index/index.html" class="btn btn-danger">我的购物车</a>
+    </div>
+
+</body>
+<script>
+    $('.shopcar').mousemove(function () {
+        $('.shopcar .adddet').show();
+    });
+    $('.shopcar').mouseout(function () {
+        $('.shopcar .adddet').hide();
+    });
+
+
+    //本地存储存储购物车商品的形式： [{id,title,price,number},{}]
+    var car = new Car();
+    //加入商品到购物车逻辑
+    function addCar(btnEle) {
+        var tr = btnEle.parentElement.parentElement;
+        //获取子元素
+        var tds = tr.children;
+        //构建商品对象，用于存进localStorage
+        var product = {
+            id: tds[0].innerText,
+            title: tds[1].innerText,
+            title_t: tds[2].innerText,
+            money: tds[3].innerText,
+            src: tds[4].innerText,
+            number: 1
+
+        };
+        //加入本地存储中去
+        car.addToCar(product);
+
+
+        $('.shopcar .adddet').slideDown(500);
+        setTimeout(function () {
+            $('.shopcar .adddet').slideUp(300);
+        }, 1600)
+        initA();
+
+    }
+
+    function initA() {
+        var carS = new CarS();
+
+        function CarS() {}
+        // //获取购物车商品
+        CarS.prototype.getCar = function () {
+            //     //没有数据默认返回一个空数组
+            return JSON.parse(localStorage.getItem('cartlist')) || [];
+        }
+
+        var cartlistA = carS.getCar();
+        // //循环购物车商品，构建tr标签
+        var strA = ``;
+        var numA = 0;
+        var price_unmA = 0;
+        var det_num = 0;
+        for (var i = 0; i < cartlistA.length; i++) {
+            var itemPrice = parseFloat(cartlistA[i].money) * parseInt(cartlistA[i].number);
+            numA += cartlistA[i].number;
+            price_unmA += itemPrice;
+            strA += ` <div class="detlist">
+                    <div class="detlist-left ">
+                        <img src="./details/images/img1/1.jpg" alt=""><span></span>
+                    </div>
+                    <div class="dettxt">
+                        <div class="detDescribe">
+                            <div class="p-1">${cartlistA[i].title}</div><i class="i-2">￥</i><span class="span-0">${cartlistA[i].money}</span>
+                            <div class="p-2"> <span class="detN">1个装</span>
+                                <span class="detNum"> &nbsp;x <i class="dgNum">${cartlistA[i].number}</i></span></div>
+
+                        </div>
+                    </div>
+                    <p class="del-det">
+                        <i onclick="car.delGoods(${cartlistA[i].id})"></i>
+                    </p>
+                </div>`;
+            det_num = cartlistA[i].number
+
+        }
+        // 所有商品
+        console.log(numA)
+        $(".pop").html(strA);
+        $('.i-1').html(numA);
+        // 已选商品数量
+        // 所有商品总价格
+        $('.total-prices i').html(price_unmA);
+    }
+    initA();
+    //删除购物车指定的商品
+    Car.prototype.delGoods = function (id) {
+        var cartlist = this.getCar();
+        for (var i = 0; i < cartlist.length; i++) {
+            if (cartlist[i].id == id) {
+                //删除当前商品
+                cartlist.splice(i, 1);
+                //需要在存入本地存储
+                localStorage.setItem('cartlist', JSON.stringify(cartlist));
+                initA();
+                return true;
+              
+            }
+        }
+        initA();
+        return false;
+    }
+</script>
+
+
+</html>
