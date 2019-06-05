@@ -1,0 +1,145 @@
+/* 版心 */
+.w {
+    width: 1090px;
+    margin: 0 auto;
+}
+/* title */
+.title {
+    height: 52px;
+    line-height: 52px;
+    border-top: 1px solid #e9e9e9;
+}
+.title span,.title a {
+    color: #333;
+    font-size: 12px;
+}
+.title a:hover {
+    text-decoration:underline;
+}
+.title em {
+    color: #999;
+    font-size: 12px;
+    margin: 0 8px;
+}
+
+/* commodity-left */
+.commodity-left {
+    width: 440px;
+    float: left;
+}
+.commodity-left ul li {
+    width: 76px;
+    float: left;
+    margin: 17px 12px 0 0 ;
+    border: 1px solid #e8e8e8;
+}
+
+.commodity-left ul li img {
+    width: 74px;
+}
+.commodity-left ul li img:hover {
+    width: 74px;
+    border: 2px solid #b4a078;
+    
+}
+.commodity-left ul li:last-child {
+    margin-right: 0;
+}
+.commodity-left .bigimg img {
+    border: 1px solid #e8e8e8;
+    width: 428px;
+}
+.commodity-left .purchase {
+    width: 130px;
+    height: 28px;
+    border: 1px solid #b4a078;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 28px;
+    margin-top: 17px;
+}
+.commodity-left .purchase a {
+    display: inline-block;
+    width: 128px;
+    height: 26px;
+    background: #f5f3ef;
+    color: #b4a078;
+    font-size: 14px;
+}
+.commodity-left .purchase a:hover {
+    background: #fff;
+}
+.commodity-left .purchase em {
+    font-size: 13px;
+    color: #b4a078;
+}
+
+.commodity-right {
+    width: 620px;
+}
+.commodity-right .manufacturer {
+    width: 74px;
+    background: #f5f3ef;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #b4a078;
+}
+.commodity-right .manufacturer a {
+    display: inline-block;
+    font-size: 12px;
+    width: 74px;
+    height: 20px;
+    color: #b4a078;
+}
+.commodity-right .product {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.commodity-right .product span {
+    font-size: 20px;
+    font-weight: 700;
+}
+.commodity-right .product a {
+color: #E36844;
+font-size: 20px;
+}
+.commodity-right .product-b {
+    margin-bottom: 15px;
+}
+.commodity-right .product-b span{
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+.commodity-right .product-b a {
+    font-size: 13px;
+}
+
+.time-to {
+    width: 620px;
+    height: 36px;
+    background: #e36844;
+    color: #fff;
+    line-height: 36px;
+    overflow: hidden;
+}
+.time-to .span1 {
+    font-size: 16px;
+    margin: 0 12px;
+}
+.time-to .span2 {
+    font-size: 12px;
+   margin-right: 12px;
+}
+.time-to img {
+    margin-top: 5px;
+    padding-left: 5px;
+}
+.time-to .time {
+    font-size: 14px;
+}
+
+.commodity-r-cent {
+    width: 620px;
+    background: #f5f3ef;
+}

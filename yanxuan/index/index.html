@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易严选-首页</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1213570_isvkgpqczg.css">
+    <link rel="stylesheet" href="./css/font_1213560_6f53jwsmd9s/iconfont.css">
+    <script src="./js/jquery.js"></script>
+    <link rel="icon" href="./favicon.ico" />
+    <script src="./layer/layer.js"></script>
+</head>
+
+<body>
+    <!-- header start -->
+    <div class="header">
+        <!-- 页头开始 -->
+        <div class="title">
+            <div class="title-main container">
+                <div class="topauto pull-left">
+                    <span class="iconfont  pull-left">&#xe61a;</span>
+                    <ul class="pull-left topauto-ul">
+                        <li class="topauto-li">撒大大大所大大所多</li>
+                    </ul>
+                </div>
+                <script>
+                    //通告栏文字滚动
+                    (function() {
+                        var topautoTimer = setInterval(autoLi, 3000)
+
+                        function autoLi() {
+                            $('.topauto-li').animate({
+                                top: "-20px"
+                            }, 500, function() {
+                                $('.topauto-li')[0].style.top = 12 + "px"
+                            })
+                        }
+                        $('.topauto-ul').hover(function() {
+                            clearInterval(topautoTimer)
+                            $('.topauto-li').css("color", "white")
+                            $('.topauto-li').css("text-decoration", "none")
+                        }, function() {
+                            $('.topauto-li').css("color", "#b4a078")
+                            $('.topauto-li').css("text-decoration", "underline")
+                            topautoTimer = setInterval(autoLi, 1000)
+                        })
+                    })()
+                </script>
+                <ul class="pull-right title-li">
+                    <li id='loginshow'>登录</li>
+                    <li class="title-right" id='registershow'>注册</li>
+                    <li class="title-right">我的订单</li>
+                    <li class="title-right">会员</li>
+                    <li class="title-right">甄选家</li>
+                    <li class="title-right title-li-er">企业采购<span class="iconfont">&#xe60b;</span><i class="iconfont">&#xeb6d;</i>
+                        <ul class="title-li-erul">
+                            <li>企业购</li>
+                            <li>礼品卡</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </li>
+                    <li class="title-right title-li-er">客户服务<span class="iconfont">&#xe60b;</span><i class="iconfont">&#xeb6d;</i>
+                        <ul class="title-li-erul">
+                            <li>帮助中心</li>
+                            <li>商务合作</li>
+                            <li>开放平台</li>
+                        </ul>
+                    </li>
+                    <li><em class="iconfont">&#xe609;</em>APP</li>
+                </ul>
+                <script>
+                    $(".title-li-er").hover(function() {
+                        $(this).children().eq(1).css('display', 'block')
+                        $(this).children().eq(2).css('display', 'block')
+                    }, function() {
+                        $(this).children().eq(1).css('display', 'none')
+                        $(this).children().eq(2).css('display', 'none')
+                    })
+                </script>
+            </div>
+        </div>
+        <!-- 页头结束 -->
+        <div class="nav">
+            <div class="nav-main container">
+                <img src="./images/navlogo.gif" class="pull-left">
+                <div class="pull-left form-search">
+                    <span class="iconfont">&#xe60d;</span>
+                    <input type="text" placeholder="搜索你想要的商品">
+                    <button>搜索</button>
+                </div>
+                <div class="search-show">
+                    <div class="search-list">
+                        <ul class="search-ul">
+                            <li>小熊饼干</li>
+                            <li>小熊干脆面</li>
+                            <li>小熊泡面</li>
+                            <li>小熊辣条</li>
+                            <li>小熊奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小猫饼干</li>
+                            <li>小猫干脆面</li>
+                            <li>小猫泡面</li>
+                            <li>小猫辣条</li>
+                            <li>小猫奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小狗饼干</li>
+                            <li>小狗干脆面</li>
+                            <li>小狗泡面</li>
+                            <li>小狗辣条</li>
+                            <li>小狗奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小鸡饼干</li>
+                            <li>小鸡干脆面</li>
+                            <li>小鸡泡面</li>
+                            <li>小鸡辣条</li>
+                            <li>小鸡奶茶</li>
+                        </ul>
+                        <ul class="search-ul">
+                            <li>小熊饼干</li>
+                            <li>小熊干脆面</li>
+                            <li>小熊泡面</li>
+                            <li>小熊辣条</li>
+                            <li>小熊奶茶</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script>
+                    //搜索栏列表轮播
+                    (function() {
+                        var searchTimer = setInterval(autoUl, 5000)
+                        var searchIndex = 0
+
+                        function autoUl() {
+                            if (searchIndex < -81) {
+                                $(".search-list").css("top", 0)
+                                searchIndex = 0
+                            }
+                            searchIndex -= 27
+                            $(".search-list").animate({
+                                top: searchIndex + "px"
+                            }, 1000)
+                        }
+                        $(".search-ul").children().hover(function() {
+                            $(this).css("color", "#B4A078")
+                            clearInterval(searchTimer)
+                        }, function() {
+                            $(this).css("color", "#999")
+                            searchTimer = setInterval(autoUl, 5000)
+                        })
+                    })()
+                </script>
+                <div class="shopcar">
+                    <div class="shopcarShow">
+                        <em class="iconfont  em-1">&#xe600;</em>
+                        <span  class="span-1">购物车</span>
+                        <i class="i-1">0</i>
+                        <div class="adddet">
+                            <div class="adddet-c">
+                                <em class="em1"></em>
+                                <em class="em2"></em>
+                                <div class="pop">
+<!--             
+                                     <div class="detlist">
+                                        <div class="detlist-left ">
+                                            <img src="./details/images/img1/1.jpg" alt=""><span></span>
+                                        </div>
+                                        <div class="dettxt">
+                                            <div class="detDescribe">
+                                                <div class="p-1"> 泰国制造 天然乳胶枕 护颈优眠 升级抗菌 </div><i class="i-2">￥</i><span class="span-0">399.00</span>
+                                                <div class="p-2"> <span class="detN">1个装</span>
+                                                    <span class="detNum"> &nbsp;x <i class="dgNum">1</i></span></div>
+            
+                                            </div>
+                                        </div>
+                                        <p class="del-det">
+                                            <i></i>
+                                        </p>
+                                    </div> -->
+                                </div>
+            
+                                <div class="to-shopC">
+                                    <div class="total-left" style="float: left;">
+                                        <p class="total-dat">商品合计：</p>
+                                        <p class="total-prices"><span>￥</span><i>399.00</i></p>
+                                    </div>
+                                    <div class="total-right">
+                                        去购物车结算
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navli">
+                    <ul>
+                        <li><a href="#" class="navli-a">首页</a></li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="navli-er"><a href="#">首页首页</a>
+                            <div class="navli-dl">
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+                                <dl>
+                                    <dd>春季换新</dd>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                    <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                                </dl>
+
+                            </div>
+                        </li>
+
+                        <li class="navli-bor"><a href="#">首页首页</a></li>
+                        <li><a href="#">首页</a></li>
+                    </ul>
+                </div>
+                <script>
+                    $('.navli-er').hover(function() {
+                        $(this).children().eq(1).fadeIn('fast')
+                    }, function() {
+                        $(this).children().eq(1).fadeOut()
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- banner start --> 
+    <div class='banner'>
+        <div class="banner-box">
+            <div class="bannerimg">
+                <a href="../details/details.html?id=1"><img style="z-index: 1" src="./images/banner1.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner2.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner3.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner4.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner5.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner6.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner7.jpg" alt=""></a>
+                <a href="../details/details.html?id=1"><img src="./images/banner8.jpg" alt=""></a>
+            </div>
+            <ol class="banner-list">
+                <li class="banner-lihover"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <button id='bannerLeft'></button>
+            <button id='bannerRight'></button>
+        </div>
+    </div>
+    <script>
+        //轮播图
+        var bannerTimer = setInterval(bannerAuto, 2000);
+        var bannerIndex = 0;
+
+        function bannerAuto() {
+            if (bannerIndex == 7) {
+                bannerIndex = -1
+            }
+            bannerIndex++
+            $(".bannerimg>a").eq(bannerIndex).children().fadeIn(500).parent().siblings().children().fadeOut(500);
+            $('.banner-list>li').eq(bannerIndex).addClass('banner-lihover').siblings().removeClass('banner-lihover')
+
+        }
+        $('.banner-list>li').hover(
+            function() {
+                $(this).addClass('banner-lihover').siblings().removeClass('banner-lihover')
+                bannerIndex = $(this).index() - 1
+                bannerAuto()
+            }
+        )
+        $('.banner-box').hover(function() {
+            clearInterval(bannerTimer)
+        }, function() {
+            bannerTimer = setInterval(bannerAuto, 1000);
+        })
+        $('#bannerLeft').click(function() {
+            bannerIndex -= 2
+            if (bannerIndex < -1) {
+                bannerIndex = 6
+            }
+            console.log(bannerIndex)
+            bannerAuto()
+
+        })
+        $('#bannerRight').click(function() {
+            bannerAuto()
+        })
+    </script>
+    <!-- banner end -->
+    <!-- 滚走导航-->
+    <div class="topNav">
+        <div class="scrollNav">
+            <a href="./index.html" class="scrollNavLogo"></a>
+            <ul class='scroll-ul'>
+                <li class='scroll-li-f'>首页</li>
+                <li class='scroll-li'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li noneSearch'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li noneSearch'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+                <li class='scroll-li noneSearch'>首页首页
+                    <div class="scroll-dl">
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                        <dl>
+                            <dd>春季换新</dd>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                            <dt><img src="./images/navli.png" alt=""><span>春季换新</span></dt>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <form onsubmit="return false" class="scrollSearch">
+                <button>>></button>
+                <input type="text" placeholder="搜索你想要的商品">
+            </form>
+
+            <script>
+                $(".scroll-li").hover(function() {
+                    $(this).children().css('display', 'block')
+                }, function() {
+                    $(this).children().css('display', 'none')
+                })
+            </script>
+            <a href="javascript:;" class="scrollNavShop"><i>0</i></a>
+            <a href="javascript:;" class="scrollNavLogin">
+                <i class="iconfont">&#xeb6d;</i>
+                <ul class="scrollNavLogin-erul">
+                    <li  id='loginshow2'>登录</li>
+                    <li  id='registershow2'>注册</li>
+                </ul>
+            </a>
+            <a href="javascript:;" class="scrollNavSearch"></a>
+
+        </div>
+    </div>
+    <script>
+        $('.scrollNavLogin').hover(function() {
+            $('.scrollNavLogin-erul').css('display', 'block')
+            $('.scrollNavLogin > i').css('display', 'block')
+        }, function() {
+            $('.scrollNavLogin-erul').css('display', 'none')
+            $('.scrollNavLogin > i').css('display', 'none')
+        })
+
+
+        $(".scrollSearch>button").click(function() {
+            $('.scrollSearch').css('display', "none")
+            $('.noneSearch').css('display', "block")
+        })
+        $(".scrollNavSearch").click(function() {
+            $('.scrollSearch').css('display', "block")
+            $('.noneSearch').css('display', "none")
+        })
+        $(document).scroll(function() {
+            if ($(document).scrollTop() >= 177) {
+                $(".topNav").animate({
+                    top: "0px"
+                }, 10)
+            } else if ($(document).scrollTop() <= 176) {
+                // console.log($(document).scrollTop())
+                $(".topNav").animate({
+                    top: "-50px"
+                }, 10)
+            }
+
+        })
+    </script>
+    <!-- 滚走导航-->
+    <!-- main start -->
+    <!-- 品牌 -->
+    <div class="manufacturer g-row">
+        <div class="manufacturer-h">
+            <h2>品牌制造商</h2><span>工厂直达消费者，剔除品牌溢价</span><a href="javascript:;">更多制造商></a>
+        </div>
+        <div class='manufacturerlist'>
+            <a  href="../details/details.html?id=2" class='manufacturerfl'>
+                <div class='name'><span>海外制造商</span><span class='newShelfTag'>上新</span></div>
+                <div class='price'>9.9元起</div>
+                <img src='images/manufacturer1.png' class='img-box'>
+            </a>
+            <a href="../details/details.html?id=2" class='manufacturerfl'>
+                <div class='name'><span>CK制造商</span></div>
+                <div class='price'>29.9元起</div>
+                <img src='images/manufacturer1.png' class='img-box'>
+            </a>
+            <a  href="../details/details.html?id=3" class='manufacturersmall'>
+                <div class='name'><span>CK制造商</span></div>
+                <div class='price'>29.9元起</div>
+                <img src='images/manufacturer2.png' class='img-box'>
+            </a>
+            <a  href="../details/details.html?id=3" class='manufacturersmall'>
+                <div class='name'><span>CK制造商</span></div>
+                <div class='price'>29.9元起</div>
+                <img src='images/manufacturer2.png' class='img-box'>
+            </a>
+        </div>
+    </div>
+    <!-- 新品 -->
+    <div class="m-newProducts g-row">
+        <div class="manufacturer-h">
+            <h2>新品首发</h2><span>为你寻觅新品</span><a href="javascript:;">更多新品></a>
+        </div>
+        <div class='slickWidth'>
+            <button class="slick-btnLeft" id='newBtnLeft'></button>
+            <div class='itemList'>
+
+                <div class='newitemList' id='newitemList'>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img niunai'>
+                            <img src='images/newProducts.jpg'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                            <a href='#'></a>
+                            <div class='newitemList-img niunai'>
+                                <img src='images/newProducts.jpg'>
+                            </div>
+                            <div class='colorNum'>日本制造</div>
+                            <div class='newitemList-title'>
+                                <div class="prdtTags">
+                                    <span class="itemTag">好货内部价</span>
+                                </div>
+                                <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                                <p class='price'>
+                                    <span class="retailPrice">￥59</span>
+                                    <span class='counterPrice'>￥69</span>
+                                </p>
+                            </div>
+                    </div>
+                    <div class="m-product">
+                            <a href='#'></a>
+                            <div class='newitemList-img niunai'>
+                                <img src='images/newProducts.jpg'>
+                            </div>
+                            <div class='colorNum'>日本制造</div>
+                            <div class='newitemList-title'>
+                                <div class="prdtTags">
+                                    <span class="itemTag">好货内部价</span>
+                                </div>
+                                <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                                <p class='price'>
+                                    <span class="retailPrice">￥59</span>
+                                    <span class='counterPrice'>￥69</span>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+               
+            </div>
+            <button class="slick-btnRight newBtnRight" id='newBtnRight'></button>
+        </div>
+    </div>
+    </div>
+    <!-- 人气推荐 -->
+    <div class='m-indexPopularItem'>
+        <div class='g-row'>
+            <div class="manufacturer-h">
+                <h2>新品首发</h2>
+                <ul class='innerWrap'>
+                    <li>编辑推荐</li>
+                    <li>人气热销</li>
+                </ul>
+                <a href="javascript:;">更多新品></a>
+            </div>
+            <div class='showContainer'>
+                <div class="showContainerLeft">
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img big putao'>
+                            <img src='images/indexPopularItem1.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showContainerRight">
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-product">
+                        <a href='#'></a>
+                        <div class='newitemList-img small putao'>
+                            <img src='images/indexPopularItem2.png' class='img-box'>
+                        </div>
+                        <div class='colorNum'>日本制造</div>
+                        <div class='newitemList-title'>
+                            <div class="prdtTags">
+                                <span class="itemTag">好货内部价</span>
+                            </div>
+                            <h4 class="name"><a href='#'>黑葡萄</a></h4>
+                            <p class='price'>
+                                <span class="retailPrice">￥59</span>
+                                <span class='counterPrice'>￥69</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 限时购 -->
+    
+    <div class="m-flashSale">
+        <div class="g-row">
+            <div class="manufacturer-h">
+                <h2>新品首发</h2>
+                <a href="javascript:;">更多新品></a>
+            </div>
+            <div class="bd">
+                <div class="m-flashSalebd">
+                    <div class="screenHd">18点场</div>
+                    <div class="line"></div>
+                    <div class="screenEndTips">距离结束还剩</div>
+                    <div class="m-countDown">
+                        <span class="w-cd" id='countTime'>00</span>
+                        <span class="colon">:</span>
+                        <span class="w-cd" id='countMinute'>00</span>
+                        <span class="colon">:</span>
+                        <span class="w-cd" id='countSecond'>00</span>
+                    </div>
+                    <span class="seeMoreBtn">查看全部&nbsp;&gt;</span>
+                </div>
+                <div class="m-flashSaleright">
+                    <div class="m-flashSaleProduct">
+                        <div class="lt">
+                            <a href="#">
+                                <div>
+                                    <img src="images/flashSaleProductpng.png" alt="" class='img-box'>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rt">
+                            <h2 class="itemName">欧式精铸多功能不粘锅</h2>
+                            <p class="itemDes">一锅多能</p>
+                            <div class="itemNum">
+                                <div class="numBar">
+                                    <div class="numBarIn"></div>
+                                </div>
+                                <span class="numTips">还剩232件</span>
+                            </div>
+                            <div class="itemPrice">
+                                <span class="aPrice">限时价￥109</span>
+                                <span class="oPrice">#139</span>
+                            </div>
+                            <a href="#" class="btn-danger">立即抢购</a>
+                        </div>
+                    </div>
+                    <div class="m-flashSaleProduct">
+                        <div class="lt">
+                            <a href="#">
+                                <div>
+                                    <img src="images/flashSaleProductpng.png" alt="" class='img-box'>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rt">
+                            <h2 class="itemName">欧式精铸多功能不粘锅</h2>
+                            <p class="itemDes">一锅多能</p>
+                            <div class="itemNum">
+                                <div class="numBar">
+                                    <div class="numBarIn"></div>
+                                </div>
+                                <span class="numTips">还剩232件</span>
+                            </div>
+                            <div class="itemPrice">
+                                <span class="aPrice">限时价￥109</span>
+                                <span class="oPrice">#139</span>
+                            </div>
+                            <a href="#" class="btn-danger">立即抢购</a>
+                        </div>
+                    </div>
+                    <div class="m-flashSaleProduct">
+                        <div class="lt">
+                            <a href="#">
+                                <div>
+                                    <img src="images/flashSaleProductpng.png" alt="" class='img-box'>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rt">
+                            <h2 class="itemName">欧式精铸多功能不粘锅</h2>
+                            <p class="itemDes">一锅多能</p>
+                            <div class="itemNum">
+                                <div class="numBar">
+                                    <div class="numBarIn"></div>
+                                </div>
+                                <span class="numTips">还剩232件</span>
+                            </div>
+                            <div class="itemPrice">
+                                <span class="aPrice">限时价￥109</span>
+                                <span class="oPrice">#139</span>
+                            </div>
+                            <a href="#" class="btn-danger">立即抢购</a>
+                        </div>
+                    </div>
+                    <div class="m-flashSaleProduct">
+                        <div class="lt">
+                            <a href="#">
+                                <div>
+                                    <img src="images/flashSaleProductpng.png" alt="" class='img-box'>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rt">
+                            <h2 class="itemName">欧式精铸多功能不粘锅</h2>
+                            <p class="itemDes">一锅多能</p>
+                            <div class="itemNum">
+                                <div class="numBar">
+                                    <div class="numBarIn"></div>
+                                </div>
+                                <span class="numTips">还剩232件</span>
+                            </div>
+                            <div class="itemPrice">
+                                <span class="aPrice">限时价￥109</span>
+                                <span class="oPrice">#139</span>
+                            </div>
+                            <a href="#" class="btn-danger">立即抢购</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 福利社 -->
+    <div class="m-saleCenter">
+        <div class="g-row">
+            <div class="manufacturer-h">
+                <h2>新品首发</h2>
+                <a href="javascript:;">更多新品></a>
+            </div>
+            <div class="saleCenterList">
+                <div class="indexCarousel pull-left">
+                    <div class="item" z-index = '3'>
+                        <a href="#">
+                            <img src = './images/smallbanner1.jpg'>
+                        </a>
+                    </div>
+                    <div class="item" z-index = '2'>
+                        <a href="#">
+                                <img src = './images/smallbanner2.jpg'>
+                        </a>
+                    </div>
+                    <div class="item" z-index = '1'>
+                        <a href="#">
+                                <img src = './images/smallbanner3.jpg'>
+                        </a>
+                    </div>
+                    <button class='indexCarouselBtnl'></button>
+                    <ol class = 'indexCarouselOl'>
+                        <li class='carousel-list'></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                    <button class='indexCarouselBtnr'></button>
+                </div>
+                <div class="moduleList pull-left">
+                    <div class="module-0 pull-left">
+                        <div class="moduleHd">
+                            <h2>今日特价</h2>
+                            <a href="#">查看全部></a>
+                        </div>
+                        <div class="moduleBd">
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                        <img src='./images/moduleBd.png'>
+                                    </a>
+                                    <div class="discount">
+                                        <span>8</span>
+                                        <span>折</span>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">泰国制造天然乳胶床垫5cm标准</div>
+                                    <div class="limitPrice">限时价￥1599</div>
+                                    <div class="counterPrice">￥1999</div>
+                                    <div class="w-button">立即抢购</div>
+                                </div>
+                            </div>
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                        <img src='./images/moduleBd.png'>
+                                    </a>
+                                    <div class="discount">
+                                        <span>8</span>
+                                        <span>折</span>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">泰国制造天然乳胶床垫5cm标准</div>
+                                    <div class="limitPrice">限时价￥1599</div>
+                                    <div class="counterPrice">￥1999</div>
+                                    <div class="w-button">立即抢购</div>
+                                </div>
+                            </div>
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                        <img src='./images/moduleBd.png'>
+                                    </a>
+                                    <div class="discount">
+                                        <span>8</span>
+                                        <span>折</span>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">泰国制造天然乳胶床垫5cm标准</div>
+                                    <div class="limitPrice">限时价￥1599</div>
+                                    <div class="counterPrice">￥1999</div>
+                                    <div class="w-button">立即抢购</div>
+                                </div>
+                            </div>
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                        <img src='./images/moduleBd.png'>
+                                    </a>
+                                    <div class="discount">
+                                        <span>8</span>
+                                        <span>折</span>
+                                    </div>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">泰国制造天然乳胶床垫5cm标准</div>
+                                    <div class="limitPrice">限时价￥1599</div>
+                                    <div class="counterPrice">￥1999</div>
+                                    <div class="w-button">立即抢购</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-1 pull-left">
+                        <div class="moduleHd">
+                            <h2>今日特价</h2>
+                            <a href="#">查看全部></a>
+                        </div>
+                        <div class="moduleBd">
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                            <img src='./images/moduleBd2.png'>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">
+                                        <a href="#">囤货装 韩国制造啊啊啊</a>
+                                    </div>
+                                    <div class="price">
+                                        <span class="limitPrice">￥24</span>
+                                        <span class="counterPrice">￥30</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item pull-left">
+                                    <div class="hd">
+                                        <a href="#">
+                                                <img src='./images/moduleBd2.png'>
+                                        </a>
+                                    </div>
+                                    <div class="bd">
+                                        <div class="name">
+                                            <a href="#">囤货装 韩国制造啊啊啊</a>
+                                        </div>
+                                        <div class="price">
+                                            <span class="limitPrice">￥24</span>
+                                            <span class="counterPrice">￥30</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="module-1 pull-left">
+                        <div class="moduleHd">
+                            <h2>今日特价</h2>
+                            <a href="#">查看全部></a>
+                        </div>
+                        <div class="moduleBd">
+                            <div class="item pull-left">
+                                <div class="hd">
+                                    <a href="#">
+                                            <img src='./images/moduleBd2.png'>
+                                    </a>
+                                </div>
+                                <div class="bd">
+                                    <div class="name">
+                                        <a href="#">囤货装 韩国制造啊啊啊</a>
+                                    </div>
+                                    <div class="price">
+                                        <span class="limitPrice">￥24</span>
+                                        <span class="counterPrice">￥30</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item pull-left">
+                                    <div class="hd">
+                                        <a href="#">
+                                                <img src='./images/moduleBd2.png'>
+                                        </a>
+                                    </div>
+                                    <div class="bd">
+                                        <div class="name">
+                                            <a href="#">囤货装 韩国制造啊啊啊</a>
+                                        </div>
+                                        <div class="price">
+                                            <span class="limitPrice">￥24</span>
+                                            <span class="counterPrice">￥30</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 小轮播 -->
+    <div class="m-indexCates">
+        <div class="g-row">
+            <div class="m-indexCate">
+             <div class="manufacturer-h">
+                 <h2>新品首发</h2>
+                 <a href="javascript:;">更多新品></a>
+                 <ul>
+                     <li><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                     <li><b>/</b><a href="#">夏季热卖</a></li>
+                 </ul>
+             </div>
+             <div class="indexCate-banner">
+                 <div class="m-focus">
+                     <div class="focus-img" id="banner1">
+                         <img src="./images/9c372d5a039d9d58cd7eb4f9b1434926.jpg" style="z-index: 1" alt="">
+                         <img src="./images/9c91f93226d32c83826b3a7f69d0b9af.jpg"  alt="">
+                     </div>
+                     <div class="focus-ol" id='ol1' style="z-index: 2">
+                         <ol>
+                             <li class='focus-liH'></li>
+                             <li></li>
+                         </ol>
+                     </div>
+                     <div class="focus-btn">
+                         <button class="focus-left" onclick="focusBannerr()" style="z-index: 2"></button>
+                         <button class="focus-right" onclick="focusBannerl()" style="z-index: 2"></button>
+                     </div>
+                 </div>
+             </div>
+             <div class = 'indexCate-list'>
+                <div class="m-product">
+                    <a href="#"></a>
+                    <div class="newitemList-img">
+                        <img src="images/newProducts.jpg">
+                    </div>
+                    <div class="colorNum">日本制造</div>
+                    <div class="newitemList-title">
+                        <div class="prdtTags">
+                            <span class="itemTag">好货内部价</span>
+                        </div>
+                        <h4 class="name"><a href="#">黑葡萄</a></h4>
+                        <p class="price">
+                            <span class="retailPrice">￥59</span>
+                            <span class="counterPrice">￥69</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="m-product">
+                    <a href="#"></a>
+                    <div class="newitemList-img">
+                        <img src="images/newProducts.jpg">
+                    </div>
+                    <div class="colorNum">日本制造</div>
+                    <div class="newitemList-title">
+                        <div class="prdtTags">
+                            <span class="itemTag">好货内部价</span>
+                        </div>
+                        <h4 class="name"><a href="#">黑葡萄</a></h4>
+                        <p class="price">
+                            <span class="retailPrice">￥59</span>
+                            <span class="counterPrice">￥69</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="m-product">
+                    <a href="#"></a>
+                    <div class="newitemList-img">
+                        <img src="images/newProducts.jpg">
+                    </div>
+                    <div class="colorNum">日本制造</div>
+                    <div class="newitemList-title">
+                        <div class="prdtTags">
+                            <span class="itemTag">好货内部价</span>
+                        </div>
+                        <h4 class="name"><a href="#">黑葡萄</a></h4>
+                        <p class="price">
+                            <span class="retailPrice">￥59</span>
+                            <span class="counterPrice">￥69</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="m-product">
+                    <a href="#"></a>
+                    <div class="newitemList-img">
+                        <img src="images/newProducts.jpg">
+                    </div>
+                    <div class="colorNum">日本制造</div>
+                    <div class="newitemList-title">
+                        <div class="prdtTags">
+                            <span class="itemTag">好货内部价</span>
+                        </div>
+                        <h4 class="name"><a href="#">黑葡萄</a></h4>
+                        <p class="price">
+                            <span class="retailPrice">￥59</span>
+                            <span class="counterPrice">￥69</span>
+                        </p>
+                    </div>
+                </div>
+             </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- 甄选家 -->
+    <div class="m-expert g-row">
+        <div class="manufacturer-h">
+            <h2>新品首发</h2><span>啧啧啧啧啧啧做</span>
+            <a href="javascript:;">更多新品></a>
+        </div>
+        <div class="bd">
+            <div class="expertContent">
+                <a href="#" class="expertfirst">
+                    <div>
+                        <img src="./images/expertContent1.jpg" alt="">
+                    </div>
+                </a>
+                <a href="#" class="expertsmall">
+                    <div>
+                        <img src="./images/expertContent2.jpg" alt="">
+                    </div>
+                </a>
+                <a href="#" class="expertsmalllast expertsmall">
+                    <div>
+                        <img src="./images/expertContent3.jpg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 大家都在说 -->
+    <div class="m-indexComment">
+        <div class="g-row">
+            <div class="manufacturer-h">
+                <h2>新品首发</h2><span>生活没有统一标准</span>
+                <a href="javascript:;">更多新品></a>
+            </div>
+            <div class="bd slickWidth">
+                <div class="js-CommentSlick">
+
+                    <button class="slick-btnLeft"></button>
+                    <div class="slick-list">
+                        <ul class="slick-track">
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slick-slide">
+                                <div class="slick-product">
+                                    <div class="hd">
+                                        <a href="#">
+                                            <img src="./images/indexComment.png" class='img-box'>
+                                        </a>
+                              
+                                    </div>
+                                    <div class="bd">
+                                        <div class="m-comment">
+                                            <div class="slick-top">
+                                                <span>s*****mm</span>
+                                                <span>2019-05-20 14:30</span>
+                                            </div>
+                                            <div class="slick-middle">
+                                                <span>呜呜呜呜呜呜呜呜无无</span>
+                                                <em>￥45</em>
+                                            </div>
+                                            <div class="slick-footer">
+                                                <p>嘤嘤嘤我用哪个晕晕晕晕晕晕晕晕晕呜呜呜呜呜呜呜呜无无无无</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="slick-btnRight"></button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main end -->
+    <!-- footer start -->
+    <div class="footer">
+        <div class="foot">
+            <div class="foot-nome foot-cp">
+                <h4>客户服务</h4>
+                <a class="btn_bt" href="javascript:;">
+                    <i class="iconfont icon-kefu"></i>
+                    <div>在线客服</div>
+                </a>
+                <a class="btn_bt" href="javascript:;">
+                    <i class="iconfont icon-xinxi"></i>
+                    <div>用户反馈</div>
+                </a>
+            </div>
+            <div class="foot-two foot-cp">
+                <div>
+                    <h4>何为严选
+                    </h4>
+                    <p>网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品
+                    </p>
+                </div>
+                <div>
+                    <span class="spAn">关注我们 :</span>
+                    <i class=" iconfont icon-wenhao spa"></i>
+                    <i class=" iconfont icon-weixin spb"></i>
+                    <i class=" iconfont icon-weibo spc"></i>
+                </div>
+            </div>
+            <div class="foot-three foot-cp">
+                <h4>扫码下载严选APP</h4>
+                <img src="./images/codetow.png" alt="">
+                <div class="p_mp">下载领1000元新人礼包</div>
+            </div>
+        </div>
+        <div class="footend ">
+            <div class="container">
+                <ul class="ulst ">
+                    <li>
+                        <span>
+                            <i class="iconfont icon-wangyi"></i>
+                        </span>
+                        <em>网易自营电商</em>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="iconfont icon-zhibao"></i>
+                        </span>
+                        <em>30天无忧退换货</em>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="iconfont icon-huoche"></i>
+                        </span>
+                        <em>满88元免邮费</em>
+                    </li>
+                    <li style=" margin: 0;">
+                        <span>
+                            <i class="iconfont icon-huizhang"></i>
+                        </span>
+                        <em>品质保证</em>
+                    </li>
+                </ul>
+
+                <div class="footerend">
+                    <div class="footer_div ">
+                        <a href="#">关于我们</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#"> 帮助中心</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">售后服务</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">配送与验收</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">商务合作</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">企业采购</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">开放平台</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">搜索推荐</a>
+                        <i class=" iconfont icon-vertical_line"></i>
+                        <a href="#">友情链接</a>
+                    </div>
+                    <div style="margin: 11px 0">
+                        <div class="footer_div">
+                            <a href="#"> 食品经营许可证：JY13301080111719</a>
+                            &nbsp;
+                            <a href="#">出版物经营许可证：新出发滨字第0132号</a>
+                            &nbsp; 妙得ICP证号：ICP 证浙B2-20160106 &nbsp;
+                            <a href="#"> 第二类医疗器械经营备案</a>
+                            &nbsp;
+                            <a href="#">营业执照 </a>
+                            &nbsp; 网易公司版权所有 © 1997-2019
+                        </div>
+
+                    </div>
+                    <div class="footer_div">
+                        （粤）网械平台备字（2019）第00004号 &nbsp;
+                        <a href="#">单用途商业预付卡备案证：330100AAC0024</a>
+                        <img src="./images/heheheh.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!-- login -->
+    <div class="login_box_body">
+        <div class="login_box">
+            <div class="login_title_t ">
+                <div class="login_title_left login_t_result">
+                    手机号登陆
+                </div>
+                <span class="iconfont icon-vertical_line"></span>
+                <div class="login_title_right">
+                    邮箱登陆
+                </div>
+                <span class="iconfont icon-shanchu title_span"></span>
+            </div>
+            <div class="login_nei_box">
+                <div class="login_nei_mima">
+                    使用密码验证登陆
+                </div>
+
+                <!-- 邮箱登陆 -->
+                <div class="login_input_box mail_acc  input_change ">
+                    <span>
+                        <i class="iconfont icon-youxiang"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="text" name="account" class="mail_acc_input login_input login_account_input" placeholder="请输入邮箱">
+                    <span>
+                        <i class="iconfont icon-shanchu input_del input_del_account"></i>
+                    </span>
+                </div>
+
+                <!-- 手机号登陆 -->
+                <div class="login_input_box  phone_acc">
+                    <span>
+                        <i class="iconfont icon-shouji1"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="text" name="account" class="phone_acc_input login_input login_account_input" placeholder="请输入手机号">
+                    <span>
+                        <i class="iconfont icon-shanchu input_del input_del_account"></i>
+                    </span>
+                </div>
+
+                <div class="login_pwd login_input_box">
+                    <span>
+                        <i class="iconfont icon-suo"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="password" name="pwd" class="login_pwd_input login_input" placeholder="请输入密码">
+                    <span>
+                        <i class="iconfont icon-shanchu  input_del input_del_pwd"></i>
+                    </span>
+                </div>
+                <span class="login_tishi_t"></span>
+
+                <div class="login_input_btn">
+                    <button id="login_input_btn">登录</button>
+                </div>
+                <div class="login_dl_footer">
+                    <span class="iconfont icon-weixin1"></span>
+                    <span class="iconfont icon-qq"></span>
+                    <span class="iconfont icon-weibo1"></span>
+                    <span class="iconfont icon-wangyi"></span>
+                    <a href="#">遇到问题？</a>
+                    <a href="../register/register.html">手机快捷注册</a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+<!-- <script src='./js/index.js'></script> -->
+<script src="./js/index.js"></script>
+</html>

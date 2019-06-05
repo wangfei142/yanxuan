@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1213570_isvkgpqczg.css">
+    <script src="./jquery-1.12.4.js"></script>
+</head>
+<style>
+    .login_box_body {
+        z-index: 1170;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgb(000, 000, 000, 0.7);
+        /* display:none; */
+    }
+
+    .login_box {
+        position: fixed;
+        width: 384px;
+        height: 400px;
+        background-color: #fff;
+        border: #fff solid 1px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .login_title_t {
+        padding-top: 58px;
+        text-align: center;
+        color: #333;
+        font-size: 18px;
+        margin: auto;
+        line-height: 18px;
+        width: 290px;
+        /* overflow: hidden; */
+        position: relative;
+    }
+
+    .login_title_left {
+        float: left;
+        cursor: pointer;
+
+    }
+
+    .login_title_right {
+        float: right;
+        cursor: pointer;
+    }
+
+    .login_t_result {
+        color: #999;
+    }
+
+    .login_t_result:hover {
+        color: #b4a078;
+    }
+
+    .login_title_t span {
+        font-size: 25px;
+        color: #ccc;
+    }
+
+    .title_span {
+        position: absolute;
+        right: 0px;
+        font-size: 30px;
+        right: -44px;
+        font-size: 30px !important;
+        top: 10px;
+
+    }
+
+    .title_span:hover {
+        color: #999;
+        cursor: pointer;
+    }
+
+    .login_nei_box {
+        width: 304px;
+        height: 314px;
+        /* border: #999 solid 1px; */
+        margin: 20px 40px 83px;
+    }
+
+    .login_nei_mima {
+        height: 26px;
+        float: right;
+        font-size: 12px;
+        color: #666;
+        cursor: pointer;
+        /* background: #b4a078; */
+    }
+
+    .login_nei_mima:hover {
+        color: #b4a078;
+    }
+
+    .login_input_box {
+        margin-top: 15px;
+        width: 294px;
+        height: 38px;
+        border: 1px solid #e8e8e8;
+        line-height: 36px;
+        border-radius: 2px;
+        padding-left: 10px;
+        overflow: hidden;
+    }
+
+    .login_input {
+        /* float: right; */
+        width: 203px;
+        height: 38px;
+        border: none;
+        outline: none;
+        /* margin-left: 10px */
+    }
+
+    /* .login_input_box span{
+        color: #666;
+        font-size: 20px;
+    } */
+
+    .login_input_box>span>i {
+        color: rgb(199, 199, 199);
+        font-size: 23px;
+    }
+
+    .login_input_btn>button {
+        margin-top: 40px;
+        display: block;
+        width: 100%;
+        height: 48px;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        background: #b4a078;
+        font-size: 18px;
+        line-height: 48px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+    }
+
+    .login_input_btn>button:hover {
+        background: #b8a683;
+    }
+
+    .login_dl_footer {
+        height: 60px;
+        background: #F5F3EF;
+        overflow: hidden;
+        width: 346px;
+        bottom: -1px;
+        left: -1px;
+        position: absolute;
+        line-height: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .login_dl_footer>span {
+        cursor: pointer;
+        padding-left: 15px;
+        color: #999;
+        font-size: 25px;
+    }
+
+    .login_dl_footer>span:hover,
+    .login_dl_footer>a:hover {
+        color: #b4a078;
+    }
+
+    .login_dl_footer>a {
+        text-decoration: none;
+        color: #999;
+        font-size: 12px;
+        float: right;
+        padding-left: 10px
+    }
+
+    .login_tishi_t {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .input_del {
+        color: rgb(209, 208, 208) !important;
+        font-size: 14px !important;
+        height: 20px;
+        width: 20px;
+        line-height: 21px;
+        text-align: center;
+        background-color: rgb(224, 224, 224);
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+
+    }
+
+    .input_del_account {
+        display: none;
+    }
+
+    .input_del_pwd,
+    .input_change {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="login_box_body">
+        <div class="login_box">
+            <div class="login_title_t ">
+                <div class="login_title_left login_t_result">
+                    手机号登陆
+                </div>
+                <span class="iconfont icon-vertical_line"></span>
+                <div class="login_title_right">
+                    邮箱登陆
+                </div>
+                <span class="iconfont icon-shanchu title_span"></span>
+            </div>
+            <div class="login_nei_box">
+                <div class="login_nei_mima">
+                    使用密码验证登陆
+                </div>
+
+                <!-- 邮箱登陆 -->
+                <div class="login_input_box mail_acc  input_change ">
+                    <span>
+                        <i class="iconfont icon-youxiang"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="text" name="account" class="mail_acc_input login_input login_account_input" placeholder="请输入邮箱">
+                    <span>
+                        <i class="iconfont icon-shanchu input_del input_del_account"></i>
+                    </span>
+                </div>
+
+                <!-- 手机号登陆 -->
+                <div class="login_input_box  phone_acc">
+                    <span>
+                        <i class="iconfont icon-shouji1"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="text" name="account" class="phone_acc_input login_input login_account_input" placeholder="请输入手机号">
+                    <span>
+                        <i class="iconfont icon-shanchu input_del input_del_account"></i>
+                    </span>
+                </div>
+
+                <div class="login_pwd login_input_box">
+                    <span>
+                        <i class="iconfont icon-suo"></i>
+                    </span>
+                    <span>
+                        <i class="iconfont icon-vertical_line"></i>
+                    </span>
+                    <input type="password" name="pwd" class="login_pwd_input login_input" placeholder="请输入密码">
+                    <span>
+                        <i class="iconfont icon-shanchu  input_del input_del_pwd"></i>
+                    </span>
+                </div>
+                <span class="login_tishi_t"></span>
+
+                <div class="login_input_btn">
+                    <button id="login_input_btn">登录</button>
+                </div>
+                <div class="login_dl_footer">
+                    <span class="iconfont icon-weixin1"></span>
+                    <span class="iconfont icon-qq"></span>
+                    <span class="iconfont icon-weibo1"></span>
+                    <span class="iconfont icon-wangyi"></span>
+                    <a href="#">遇到问题？</a>
+                    <a href="../register/index.html">手机快捷注册</a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+    //手机登陆
+    $(".login_title_left").on('click', function () {
+        $(".login_title_left").removeClass("login_t_result");
+        $(".login_title_right").addClass("login_t_result");
+        $(".phone_acc").removeClass("input_change");
+        $(".mail_acc").addClass("input_change");
+    })
+
+
+    //邮箱登陆
+    $(".login_title_right").on('click', function () {
+        $(".login_title_right").removeClass("login_t_result");
+        $(".login_title_left").addClass("login_t_result");
+        $(".mail_acc").removeClass("input_change");
+        $(".phone_acc").addClass("input_change");
+    })
+
+    //input 里的删除删除输入的信息，并消除自身
+    $(".title_span").on('click', function () {
+        $('.login_box_body').css('display', 'none')
+    });
+    $('.login_account_input').on('keyup', function () {
+        $('.login_tishi_t').html(" ");
+        var accounr_login = $('.login_account_input').val();
+
+        if (accounr_login.length > 0) {
+            $('.input_del_account').css('display', 'inline-block')
+        } else {
+            $('.input_del_account').css('display', 'none')
+        }
+    })
+    $('.login_pwd_input').on('keyup', function () {
+        $('.login_tishi_t').html(" ");
+        var pwd_login = $('.login_pwd_input ').val()
+
+        if (pwd_login.length > 0) {
+            $('.input_del_pwd').css('display', 'inline-block')
+        } else {
+            $('.input_del_pwd').css('display', 'none')
+        }
+    })
+    $('.input_del_pwd').on('click', function () {
+        $('.login_pwd_input ').val("")
+        $('.input_del_pwd').css('display', 'none')
+    })
+    $('.input_del_account').on('click', function () {
+        $('.login_account_input ').val("")
+        $('.input_del_account').css('display', 'none')
+    })
+
+    //注册按钮
+    $('#login_input_btn').on('click', function () {
+        var mail = $('.mail_acc_input').val();
+        console.log(mail)
+        var phone = $('.phone_acc_input').val();
+        var pwd_login = $('.login_pwd_input').val();
+        console.log(phone)
+        console.log(pwd_login)
+        // var accounr_login = $('.login_account_input').val()
+        // var pwd_login = $('.login_pwd_input ').val()
+        // if (accounr_login == '' || pwd_login == '') {
+        //     $('.login_tishi_t').html(" ✗ 账号或密码不能为空").css('color', 'red');
+        // }
+        if ( mail == '') {
+            $.post(
+                "./php/loginphone.php",
+                { phone: phone, pwd_login: pwd_login },
+                function (data) {
+                    if (data.dig == 200) {
+                        // $('.login_tishi_t').html(data.mas).css('color', 'green');
+                        // $('.login_box_body').css('display', 'none')
+                        console.log(data);
+
+                    } else {
+                        $('.login_tishi_t').html(data.mas).css('color', 'red');
+                    }
+                    console.log(data);
+                }, "json");
+        } else if ( phone == '') {
+            $.post(
+                "./php/loginmail.php",
+                { mail: mail, pwd_login: pwd_login },
+                function (data) {
+                    if (data.dig == 200) {
+                        // $('.login_tishi_t').html(data.mas).css('color', 'green');
+                        // $('.login_box_body').css('display', 'none')
+                        console.log(data);
+
+                    } else {
+                        $('.login_tishi_t').html(data.mas).css('color', 'red');
+                    }
+                    console.log(data);
+                }, "json");
+        }
+
+        //     $('.login_tishi_t').html(" ✗ 账号或密码不能为空").css('color', 'red');
+        // }
+
+        // $.post(
+        //     "./php/loginmail.php",
+        //     {  mail : mail , pwd_login: pwd_login },
+        //     function (data) {
+        //         if (data.dig == 200) {      
+        //             $('.login_box_body').css('display', 'none')
+
+        //         } else {
+        //             $('.login_tishi_t').html(data.mas).css('color', 'red');
+        //         }
+        //         console.log(data);
+        //     }, "json");
+
+        // $('.input_del_account').css('display', 'none')
+        // $('.input_del_pwd').css('display', 'none')
+        // $('.login_account_input').val("");
+        // $('.login_pwd_input ').val("");
+    });
+
+
+</script>
+
+</html>

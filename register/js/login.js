@@ -70,6 +70,8 @@ $('.pwd').on('keyup', function () {
     } else if (pattern.test(pwdaVl) || reg.test(pwdaVl) || expert.test(pwdaVl)) {
         $(".pwd ").next().html("✓ 高级密码强度！没人会知道你的密码了！可以使用！").css('color', 'green');
         return pwdfa = true;
+    } else if (pwdaVl.length > 16) {
+        $(".pwd ").next().html("✗ 最短6位，最长16位").css('color', 'red');
     }
 });
 
